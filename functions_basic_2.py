@@ -6,16 +6,45 @@ def countdown(num):
         lst.append(i)
     return lst
 print(countdown(5))
+print(countdown(7))
 
-#TASK 2 Print and Return - Create a function that will receive a lost with two numbers. Print the first value and return the second. Ex: print_and_return([1,2]) should print 1 and return 2
+#TASK 2 Print and Return - Create a function that will receive a list with two numbers. Print the first value and return the second. Ex: print_and_return([1,2]) should print 1 and return 2
 
-
+def print_and_return(lst):
+    print(lst[0])
+    return lst[1]
+print(print_and_return([1,2]))
 
 #TASK 3 First Plus Length - Create a function that accepts a list and returns the sum of the first value in the list plus the list's length. Ex: first_plus_length([1,2,3,4,5]) should return 6 (first value: 1 + length: 5)
+
+def first_plus_length(lst):
+    return lst[0] + len(lst)
+print(first_plus_length([1,2,3,4,5]))
 
 #TASK 4 Values Greater than Second - Write a function that accepts a list and creates a new list containing only the values from the original list that are greater than its 2nd value. Print how many values this is and then return the new list. If the list has less than 2 elements, have the function return False.
 #Ex: values_greater_than_second([5,2,3,2,1,4]) should print 3 and return [5,3,4]
 #Ex: values_greater_than_second([3]) should return False
 
+def values_greater_than_second(lst):
+    if len(lst) <= 2:
+        return False
+    new_lst = []
+    for i in lst:
+        if i > lst[1]:
+            new_lst.append(i)
+    print(len(new_lst))
+    return new_lst
+print(values_greater_than_second([5,2,3,2,1,4]))
+print(values_greater_than_second([23,19,94,4,22,26]))
+print(values_greater_than_second([1,2]))
+print(values_greater_than_second([1]))
+
 #TASK 5 This Length, That Value - Write a function that accepts two integers as parameters: size and value. The function should create and return a list whose length is equal to the given size, and whose values are all the given value. Ex: length_and_value(4,7) should return [7,7,7,7]
 #Ex: length_and_value(6,2) should return [2,2,2,2,2,2]
+
+def this_length_that_value(num1,num2):
+    new_lst = []
+    for i in range(num1):
+        new_lst.append(num2)
+    return new_lst
+print(this_length_that_value(4,23))
